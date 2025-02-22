@@ -30,7 +30,7 @@ export const authOptions: AuthOptions = {
           const data = await response.json();
 
           if (!response.ok) {
-            throw new Error(data.message || 'Giriş başarısız');
+            throw new Error(data.message || 'Login failed');
           }
 
           return {
@@ -40,7 +40,7 @@ export const authOptions: AuthOptions = {
             apiToken: data.token
           };
         } catch (error) {
-          console.error("Kimlik doğrulama hatası:", error);
+          console.error("Authentication error:", error);
           return null;
         }
       }
