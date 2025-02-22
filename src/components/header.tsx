@@ -11,6 +11,7 @@ import {
 
 import ThemeToggle from './ThemeToggle/theme-toggle';
 import Link from 'next/link';
+import SearchModal from './search-modal';
 
 
 export default function Header() {
@@ -55,6 +56,7 @@ export default function Header() {
 
             <div className="flex items-center gap-2 px-4">
                 <ThemeToggle />
+                <SearchModal />
             </div>
         </header>
     );
