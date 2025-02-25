@@ -1,4 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dashboard UI
+
+A modern dashboard interface built with Next.js, featuring authentication, responsive design, and a clean user interface.
+
+![Dashboard Screenshot](/public/dashboard-home.png)
+
+## Technologies Used
+
+- **Next.js 15** - React framework for building web applications
+- **React 19** - JavaScript library for building user interfaces
+- **Next Auth** - Authentication solution for Next.js applications
+- **Shadcn UI** - High-quality UI components built with Radix UI and Tailwind CSS
+- **Tailwind CSS** - Utility-first CSS framework
+- **TypeScript** - Typed JavaScript for better developer experience
+
+## Features
+
+- Modern and responsive dashboard layout
+- Authentication system with Next Auth
+- Dark/Light theme support
+- Team switching functionality
+- Navigation sidebar with collapsible sections
+- Search functionality
+- User profile management
 
 ## Getting Started
 
@@ -16,21 +39,34 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app` - Next.js app router pages and layouts
+- `src/components` - Reusable UI components
+- `src/lib` - Utility functions and shared code
+- `src/hooks` - Custom React hooks
+- `src/types` - TypeScript type definitions
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-secret-key
+```
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used in this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Next Auth Documentation](https://next-auth.js.org/)
+- [Shadcn UI Documentation](https://ui.shadcn.com/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

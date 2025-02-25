@@ -13,17 +13,29 @@ export default function Page() {
       title="Dashboard"
       description="Your personal dashboard overview"
       breadcrumb={[
-        { label: 'Dashboardss', href: '/dashboard' },
-        { label: 'Example', href: '/dashboard/example' },
+        // { label: 'Dashboard', href: '/dashboard' },
+        // { label: 'Example', href: '/dashboard/example' },
       ]}
     >
       <div className="flex flex-1 flex-col gap-4 pt-0">
         <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-          <div className="aspect-video rounded-xl bg-muted/50" />
-          <div className="aspect-video rounded-xl bg-muted/50" />
-          <div className="aspect-video rounded-xl bg-muted/50" />
+          <div className="aspect-video rounded-xl bg-white" />
+          <div className="aspect-video rounded-xl bg-white" />
+          <div className="aspect-video rounded-xl bg-white" />
         </div>
-        <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+        <div className="min-h-40 flex-1 rounded-xl bg-white" />
+        <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+          <div className="aspect-video rounded-xl bg-white" />
+          <div className="aspect-video rounded-xl bg-white" />
+          <div className="aspect-video rounded-xl bg-white" />
+        </div>
+        <div className="min-h-40 flex-1 rounded-xl bg-white" />
+        <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+          <div className="aspect-video rounded-xl bg-white" />
+          <div className="aspect-video rounded-xl bg-white" />
+          <div className="aspect-video rounded-xl bg-white" />
+        </div>
+        <div className="min-h-40 flex-1 rounded-xl bg-white" />
       </div>
     </Template>
   )

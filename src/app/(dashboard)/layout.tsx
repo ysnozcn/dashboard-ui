@@ -21,9 +21,9 @@ export default function RootLayout({
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset>
+      <SidebarInset className="rounded-xl">
         <Header />
-        <main>
+        <main className="p-4">
           {children}
         </main>
       </SidebarInset>
