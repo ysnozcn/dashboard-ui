@@ -12,6 +12,7 @@ import {
 import ThemeToggle from './ThemeToggle/theme-toggle';
 import Link from 'next/link';
 import SearchModal from './search-modal';
+import { HeaderUser } from './header-user';
 
 
 export default function Header() {
@@ -54,9 +55,14 @@ export default function Header() {
                 </NavigationMenu>
             </div>
 
-            <div className="flex items-center gap-2 px-4">
+            <div className="flex items-center gap-4 px-4">
                 <ThemeToggle />
                 <SearchModal />
+                <HeaderUser user={{
+                    name: "Yasin Özcan",
+                    email: "yasin@example.com",
+                    avatar: "https://github.com/shadcn.png"
+                }} />
             </div>
         </header>
     );
