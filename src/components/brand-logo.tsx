@@ -5,15 +5,15 @@ import { useSidebar } from "@/components/ui/sidebar"
 import { cn } from "@/lib/utils"
 
 interface BrandLogoProps extends React.HTMLAttributes<HTMLDivElement> {
-    logoSrc?: string
     iconSrc?: string
     brandName?: string
+    subtitle?: string
 }
 
 export function BrandLogo({
-    logoSrc = "/logo.svg", // Tam logo için varsayılan yol
     iconSrc = "/icon.svg", // İkon için varsayılan yol
     brandName = "Marka Adı", // Varsayılan marka adı
+    subtitle = "Dashboard", // Alt başlık
     className,
     ...props
 }: BrandLogoProps) {
@@ -23,28 +23,35 @@ export function BrandLogo({
     return (
         <div
             className={cn(
-                "flex items-center justify-center transition-all duration-300 ease-in-out",
-                "border-b border-sidebar-border/50 pb-3 pt-2",
+                "flex items-center justify-center transition-all duration-200 ease-in-out",
                 className
             )}
             {...props}
         >
             {isExpanded ? (
-                <div className="flex items-center gap-3">
-                    <img
-                        src={logoSrc}
-                        alt={`${brandName} logo`}
-                        className="h-8"
-                    />
+                <div className="w-full flex items-center gap-3">
+                    <div className="rounded-md bg-primary/10 p-1.5 flex items-center justify-center shadow-sm hover:bg-primary/20 transition-colors">
+                        <img
+                            src={iconSrc}
+                            alt={`${brandName} ikonu`}
+                            className="h-6 w-6"
+                        />
+                    </div>
+                    <div className="flex flex-col">
+                        <span className="font-semibold text-sm text-sidebar-foreground">
+                            {brandName}
+                        </span>
+                        <span className="text-xs text-sidebar-muted-foreground">
+                            {subtitle}
+                        </span>
+                    </div>
                 </div>
             ) : (
-                <div className="rounded-md bg-sidebar-accent/10">
-                    <img
-                        src={iconSrc}
-                        alt={`${brandName} ikonu`}
-                        className="h-7 w-7"
-                    />
-                </div>
+                <img
+                    src={iconSrc}
+                    alt={`${brandName} ikonu`}
+                    className="h-8 w-8"
+                />
             )}
         </div>
     )

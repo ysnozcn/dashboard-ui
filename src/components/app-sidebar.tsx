@@ -161,10 +161,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <BrandLogo 
-          logoSrc="/next.svg"
-          iconSrc="/window.svg" 
-          brandName="Dashboard UI" 
+        <BrandLogo
+          iconSrc="/window.svg"
+          brandName="Dashboard UI"
           className="p-2"
         />
         <TeamSwitcher teams={data.teams} />
