@@ -14,10 +14,10 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
+import { BrandLogo } from "@/components/brand-logo"
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
 import {
   Sidebar,
   SidebarContent,
@@ -25,6 +25,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import { TeamSwitcher } from "./team-switcher"
 
 // This is sample data.
 const data = {
@@ -160,6 +161,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
+        <BrandLogo 
+          logoSrc="/next.svg"
+          iconSrc="/window.svg" 
+          brandName="Dashboard UI" 
+          className="p-2"
+        />
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
