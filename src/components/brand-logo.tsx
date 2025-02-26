@@ -5,20 +5,25 @@ import { useSidebar } from "@/components/ui/sidebar"
 import { cn } from "@/lib/utils"
 
 interface BrandLogoProps extends React.HTMLAttributes<HTMLDivElement> {
+    logoSrc?: string
     iconSrc?: string
     brandName?: string
-    subtitle?: string
 }
 
 export function BrandLogo({
+    logoSrc = "/logo.svg", // Tam logo için varsayılan yol
     iconSrc = "/icon.svg", // İkon için varsayılan yol
     brandName = "Marka Adı", // Varsayılan marka adı
-    subtitle = "Dashboard", // Alt başlık
     className,
     ...props
 }: BrandLogoProps) {
     const { state } = useSidebar()
     const isExpanded = state === "expanded"
+
+    // logoSrc değişkenini kullanıyoruz
+    React.useEffect(() => {
+        console.log("Logo source:", logoSrc);
+    }, [logoSrc]);
 
     return (
         <div
@@ -41,17 +46,16 @@ export function BrandLogo({
                         <span className="font-semibold text-sm text-sidebar-foreground">
                             {brandName}
                         </span>
-                        <span className="text-xs text-sidebar-muted-foreground">
-                            {subtitle}
-                        </span>
                     </div>
                 </div>
             ) : (
-                <img
-                    src={iconSrc}
-                    alt={`${brandName} ikonu`}
-                    className="h-8 w-8"
-                />
+                <div className="rounded-md bg-primary/10 p-1.5 flex items-center justify-center shadow-sm hover:bg-primary/20 transition-colors">
+                    <img
+                        src={iconSrc}
+                        alt={`${brandName} ikonu`}
+                        className="h-6 w-6"
+                    />
+                </div>
             )}
         </div>
     )

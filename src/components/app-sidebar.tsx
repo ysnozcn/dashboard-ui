@@ -23,7 +23,6 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarRail,
 } from "@/components/ui/sidebar"
 import { TeamSwitcher } from "./team-switcher"
 
@@ -162,9 +161,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <BrandLogo
+          logoSrc="/logo.svg"
           iconSrc="/window.svg"
           brandName="Dashboard UI"
-          className="p-2"
         />
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
@@ -175,7 +174,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
-      {/* <SidebarRail /> */}
     </Sidebar>
   )
 }
