@@ -1,30 +1,14 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react"
+import * as React from "react";
+import { AudioWaveform, BookOpen, Bot, Command, Frame, GalleryVerticalEnd, Map, PieChart, Settings2, SquareTerminal } from "lucide-react";
 
-import { BrandLogo } from "@/components/brand-logo"
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-} from "@/components/ui/sidebar"
-import { TeamSwitcher } from "./team-switcher"
+import { BrandLogo } from "@/components/brand-logo";
+import { NavMain } from "@/components/nav-main";
+import { NavProjects } from "@/components/nav-projects";
+import { NavUser } from "@/components/nav-user";
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader } from "@/components/ui/sidebar";
+import { TeamSwitcher } from "./team-switcher";
 
 // This is sample data.
 const data = {
@@ -154,17 +138,13 @@ const data = {
       icon: Map,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <BrandLogo
-          logoSrc="/logo.svg"
-          iconSrc="/window.svg"
-          brandName="Dashboard UI"
-        />
+        <BrandLogo logoSrc="/logo.svg" iconSrc="/window.svg" brandName="Dashboard UI" />
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
@@ -175,5 +155,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }

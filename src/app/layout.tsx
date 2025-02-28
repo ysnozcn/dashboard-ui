@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lato } from 'next/font/google';
+import { Lato } from "next/font/google";
 import "@/app/globals.css";
 import { Providers } from "./providers";
 import NextTopLoader from "nextjs-toploader";
@@ -17,27 +17,16 @@ export const metadata: Metadata = {
   description: "Dashboard UI",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${lato.variable} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <NextTopLoader showSpinner={false} />
-          <Providers>
-            {children}
-          </Providers>
+          <Providers>{children}</Providers>
           <Toaster richColors />
         </ThemeProvider>
       </body>
     </html>
   );
-} 
+}

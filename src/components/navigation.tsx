@@ -1,33 +1,28 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { Menu } from "lucide-react"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import Link from "next/link";
+import { Menu } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
 interface NavigationItem {
-  title: string
-  href: string
+  title: string;
+  href: string;
 }
 
 interface MobileNavigationProps {
-  items: NavigationItem[]
-  className?: string
+  items: NavigationItem[];
+  className?: string;
 }
 
 export function Navigation({ items, className }: MobileNavigationProps) {
@@ -39,9 +34,7 @@ export function Navigation({ items, className }: MobileNavigationProps) {
           {items.map((item) => (
             <NavigationMenuItem key={item.title}>
               <Link href={item.href} legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  {item.title}
-                </NavigationMenuLink>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>{item.title}</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
           ))}
@@ -60,10 +53,7 @@ export function Navigation({ items, className }: MobileNavigationProps) {
           <DropdownMenuContent className="w-56" align="start">
             {items.map((item) => (
               <DropdownMenuItem key={item.title} asChild>
-                <Link
-                  href={item.href}
-                  className="flex w-full cursor-pointer"
-                >
+                <Link href={item.href} className="flex w-full cursor-pointer">
                   {item.title}
                 </Link>
               </DropdownMenuItem>
@@ -72,5 +62,5 @@ export function Navigation({ items, className }: MobileNavigationProps) {
         </DropdownMenu>
       </div>
     </>
-  )
-} 
+  );
+}

@@ -1,19 +1,8 @@
-"use client"
+"use client";
 
-import {
-  BadgeCheck,
-  CreditCard,
-  LogOut,
-  Settings,
-  UserCircle,
-  HelpCircle,
-} from "lucide-react"
+import { BadgeCheck, CreditCard, LogOut, Settings, UserCircle, HelpCircle } from "lucide-react";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,16 +11,16 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { cn } from "@/lib/utils"
+} from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 interface HeaderUserProps {
   user?: {
-    name: string
-    email: string
-    avatar?: string
-  }
-  className?: string
+    name: string;
+    email: string;
+    avatar?: string;
+  };
+  className?: string;
 }
 
 export function HeaderUser({ user, className }: HeaderUserProps) {
@@ -39,16 +28,16 @@ export function HeaderUser({ user, className }: HeaderUserProps) {
   const defaultUser = {
     name: "Kullanıcı",
     email: "kullanici@ornek.com",
-    avatar: undefined
-  }
+    avatar: undefined,
+  };
 
-  const currentUser = user || defaultUser
+  const currentUser = user || defaultUser;
   const initials = currentUser.name
     .split(" ")
     .map((n) => n[0])
     .join("")
     .toUpperCase()
-    .substring(0, 2)
+    .substring(0, 2);
 
   return (
     <div className={cn("flex items-center", className)}>
@@ -102,5 +91,5 @@ export function HeaderUser({ user, className }: HeaderUserProps) {
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  )
-} 
+  );
+}
